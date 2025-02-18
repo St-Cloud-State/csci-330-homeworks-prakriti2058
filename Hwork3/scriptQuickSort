@@ -1,0 +1,71 @@
+Script started on 2025-02-18 02:28:25+00:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="146" LINES="23"]
+[0;32m@prakriti2058 [0m➜ [1;34m/workspaces/csci-330-homeworks-prakriti2058/HW3 [0;36m([1;31mmain[0;36m) [0m$ g++ quickSort.cpp
+[0;32m@prakriti2058 [0m➜ [1;34m/workspaces/csci-330-homeworks-prakriti2058/HW3 [0;36m([1;31mmain[0;36m) [0m$ cat quickSoe[Krt.coo[K[Kpp
+
+
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int partition(int arr[], int low, int high) {  //Partition function for correct position of pivot
+    int pivot = arr[high];
+    int i = low - 1;
+
+    for (int j = low; j < high; j++) { //swap the elements smaller than pivot
+
+        if (arr[j] < pivot) {
+            i++;
+            swap(arr[i], arr[j]);
+        }
+    }
+
+    swap(arr[i + 1], arr[high]);  //Swap pivot to its correct position
+    return i + 1;
+}
+
+void quickSort(int arr[], int low, int high) {  // Use a stack to implement quickSort without recursion
+    stack<int> lowStack, highStack;
+    
+    lowStack.push(low);
+    highStack.push(high);
+    
+    while (!lowStack.empty()) {    //start while loop till the stack is empty
+        low = lowStack.top();
+        high = highStack.top();
+        lowStack.pop();
+        highStack.pop();
+        
+        if (low < high) { //sort both left and right side of array
+            int pivot = partition(arr, low, high);
+            
+            if (pivot + 1 < high) {  //Push right subarray
+                lowStack.push(pivot + 1);
+                highStack.push(high);
+            }
+            if (low < pivot - 1) { //Push left subarray
+                lowStack.push(low);
+                highStack.push(pivot - 1);
+            }
+        }
+    }
+}
+
+int main() {
+    int arr[] = {10, 7, 8, 9, 1, 5};
+    int sizeOfArray = sizeof(arr) / sizeof(arr[0]);  //Get the size of the array
+    quickSort(arr, 0, sizeOfArray - 1);  //call quicksort
+    
+    cout << "Sorted array: ";  //output of sorted array
+    for (int i = 0; i < sizeOfArray; i++)
+        cout << arr[i] << " ";
+    cout << endl;
+    
+    return 0;
+}
+[0;32m@prakriti2058 [0m➜ [1;34m/workspaces/csci-330-homeworks-prakriti2058/HW3 [0;36m([1;31mmain[0;36m) [0m$ g++ quickSort.cpp
+[0;32m@prakriti2058 [0m➜ [1;34m/workspaces/csci-330-homeworks-prakriti2058/HW3 [0;36m([1;31mmain[0;36m) [0m$ ./a.out
+Sorted array: 1 5 7 8 9 10 
+[0;32m@prakriti2058 [0m➜ [1;34m/workspaces/csci-330-homeworks-prakriti2058/HW3 [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+
+Script done on 2025-02-18 02:31:44+00:00 [COMMAND_EXIT_CODE="0"]

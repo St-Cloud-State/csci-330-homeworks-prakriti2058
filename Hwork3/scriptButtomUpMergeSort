@@ -1,0 +1,55 @@
+Script started on 2025-02-18 22:11:26+00:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="146" LINES="23"]
+[0;32m@prakriti2058 [0m➜ [1;34m/workspaces/csci-330-homeworks-prakriti2058/HW3 [0;36m([1;31mmain[0;36m) [0m$ cat buttom[KmupmergeSort.cpp
+cat: buttomupmergeSort.cpp: No such file or directory
+[0;32m@prakriti2058 [1;31m➜ [1;34m/workspaces/csci-330-homeworks-prakriti2058/HW3 [0;36m([1;31mmain[0;36m) [0m$ cat buttomupmergeSort.cpp[K[K[Klisp
+;; Function for creating sorted pairs from the list
+(defun make-sorted-pairs (lst)
+  (if (null lst)
+      nil ;; Base case,return nil if the list is empty
+      (let ((first (car lst))  
+            (rest (cdr lst)))
+        (if (null rest) 
+            (list (list first)) ;; Single-element list remains alone
+            (cons (sort (list first (car rest)) #'<) 
+                  (make-sorted-pairs (cdr rest))))))) ;; Recursively process the rest of the list
+
+
+(defun merge-lists (l1 l2)  ;; Function that merges two sorted lists into one
+  (cond
+    ((null l1) l2)  ;; If the first list is empty, return the second
+    ((null l2) l1)  ;; If the secondlist is empty, return the first
+    ((< (car l1) (car l2)) ;; Compare first elements of both lists
+    (cons (car l1) (merge-lists (cdr l1) l2)))  ;; Put smaller element first
+    (t (cons (car l2) (merge-lists l1 (cdr l2)))))) 
+
+(defun merge-pass (lst) ;; Function to merge lists iteratively
+  (if (null lst)
+      nil
+      (if (null (cdr lst))
+          lst    ;; If there's only one list left, return it as is
+          (cons (merge-lists (car lst) (cadr lst))  ;; Merge the first two lists
+                (merge-pass (cddr lst))))))  ;; Keep merging the remaining lists
+
+(defun bottom-up-mergesort (lst)   ;; Function to implement bottom-up merge sort
+  (let ((sublists (make-sorted-pairs lst))) ;; Create sorted pairs
+    (loop while (> (length sublists) 1) do    ;; while loop until one sorted list remains
+          (setf sublists (merge-pass sublists)))
+    (car sublists)))   ;; Return the fully sorted list
+
+;; Testing
+(print (bottom-up-mergesort '(1 7 2 1 8 6 5 3 7 9 4)))
+[0;32m@prakriti2058 [0m➜ [1;34m/workspaces/csci-330-homeworks-prakriti2058/HW3 [0;36m([1;31mmain[0;36m) [0m$ cat buttomupmergeSort.lisp[1Pcppexit[KExit(exit)sbcl --load mergeSort.lisp[1P.lisp[1P.lisp[1P.lisp[1P.lisp[1P.lisp[1P.lisp[1P.lisp[1P.lisp[1P.lispb.lispu.lispt.lispt.lispo.lispm.lispu.lispp.lispm.lispe.lispr.lispg.lispe.lispS.lispo.lispr.lispt.lisp
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+
+(1 1 2 3 4 5 6 7 7 8 9) 
+* (exit)
+[0;32m@prakriti2058 [0m➜ [1;34m/workspaces/csci-330-homeworks-prakriti2058/HW3 [0;36m([1;31mmain[0;36m) [0m$ (exit)[1P)[C[1Pexi)[C[C[C[C[Kt
+exit
+
+Script done on 2025-02-18 22:13:02+00:00 [COMMAND_EXIT_CODE="0"]
