@@ -1,0 +1,172 @@
+Script started on 2025-03-17 02:56:18+00:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="146" LINES="28"]
+[0;32m@prakriti2058 [0m➜ [1;34m/workspaces/csci-330-homeworks-prakriti2058/HWork5 [0;36m([1;31mmain[0;36m) [0m$ exitsbcl --load insertionSort.lisp[8Pcat[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Kcat insertionSort.lisp[8@sbcl --load[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8Pcat[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8@sbcl --load[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P.lisp[1P.lisp[1P.lisp[1P.lisp[1P.lisp[1P.lisp[1P.lisp[1P.lisp[1P.lisp[1P.lisp[1P.lisp[1P.lisp[1P.lispQ.lisp6.lisp
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (parse '(i x s))
+
+"Parsing successful!"
+* (parse '(i y o x s e s))
+
+"Parsing successful!"
+* (parse '(i z o y o w s e s))
+
+"Parsing successful!"
+* (parse '(i x o x o x d s b e s))
+
+"Parsing successful!"
+* (parse '(i y o w o z s))
+
+"Parsing successful!"
+* (parse '(i x o y o w d s s b e s))
+
+"Parsing successful!"
+* (parse '(i w d s s s e s))
+
+"Parsing successful!"
+* (parse '(x i s))
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Syntax error: Expected I but found X
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(MATCH I)
+   source: (ERROR "Syntax error: Expected ~A but found ~A" EXPECTED
+                  (CAR *TOKENS*))
+0] (parse '(i x o s))
+
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Syntax error in G
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 1).
+  1:         Exit debugger, returning to top level.
+
+(PARSE-G)
+   source: (ERROR "Syntax error in G")
+0[2] (parse '(i y o y x s e))
+
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Syntax error in S
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 2).
+  1:         Reduce debugger level (to debug level 1).
+  2:         Exit debugger, returning to top level.
+
+(PARSE-S)
+   source: (ERROR "Syntax error in S")
+0[3] (parse '(i d w s b e s))
+
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Syntax error in E
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 3).
+  1:         Reduce debugger level (to debug level 2).
+  2:         Reduce debugger level (to debug level 1).
+  3:         Exit debugger, returning to top level.
+
+(PARSE-E)
+   source: (ERROR "Syntax error in E")
+0[4] (parse '(i x o y o w d b s e s))	
+
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Syntax error: Extra tokens found
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 4).
+  1:         Reduce debugger level (to debug level 3).
+  2:         Reduce debugger level (to debug level 2).
+  3:         Reduce debugger level (to debug level 1).
+  4:         Exit debugger, returning to top level.
+
+(PARSE (I X O Y O W D B S E S))
+   source: (ERROR "Syntax error: Extra tokens found")
+* (parse '(i y o y x s e))
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Syntax error in S
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(PARSE-S)
+   source: (ERROR "Syntax error in S")
+0] (parse '(i d w s b e s))
+
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Syntax error in E
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 1).
+  1:         Exit debugger, returning to top level.
+
+(PARSE-E)
+   source: (ERROR "Syntax error in E")
+0[2] (parse '(i x y o z s e s))
+
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Syntax error in S
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 2).
+  1:         Reduce debugger level (to debug level 1).
+  2:         Exit debugger, returning to top level.
+
+(PARSE-S)
+   source: (ERROR "Syntax error in S")
+0[3] (parse '(i x o y o w d s e))
+
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Syntax error in S
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 3).
+  1:         Reduce debugger level (to debug level 2).
+  2:         Reduce debugger level (to debug level 1).
+  3:         Exit debugger, returning to top level.
+
+(PARSE-S)
+   source: (ERROR "Syntax error in S")
+

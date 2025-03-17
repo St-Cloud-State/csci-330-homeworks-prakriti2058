@@ -1,0 +1,104 @@
+Script started on 2025-03-17 03:22:49+00:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="146" LINES="31"]
+[0;32m@prakriti2058 [0m➜ [1;34m/workspaces/csci-330-homeworks-prakriti2058/HWork5 [0;36m([1;31mmain[0;36m) [0m$ exitsbcl --load Q6.lisp[1P.lisp8.lisp
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* ^[[A^[[B        (parse '(i x s))
+Parsing successful!
+NIL
+* (parse '(i x o y s))
+Parsing successful!
+NIL
+* (parse '(i x o y o z s))
+Parsing successful!
+NIL
+* (parse '(i x o y w s))
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Syntax error at position 4: Expected 's' or 'd' but found W.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(PARSE-S)
+   source: (ERROR
+            "Syntax error at position ~A: Expected 's' or 'd' but found ~A."
+            *POSITION* TOKEN)
+0] (parse '(i x o y w d s))
+
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Syntax error at position 4: Expected 's' or 'd' but found W.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 1).
+  1:         Exit debugger, returning to top level.
+
+(PARSE-S)
+   source: (ERROR
+            "Syntax error at position ~A: Expected 's' or 'd' but found ~A."
+            *POSITION* TOKEN)
+0[2] (parse '(i x o y o z d s))
+Parsing successful!
+
+NIL
+0[2] (parse '(i x o y o z d s s))
+Parsing successful!
+
+NIL
+0[2] (parse '(i x y w d s))
+
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Syntax error at position 2: Expected 's' or 'd' but found Y.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 2).
+  1:         Reduce debugger level (to debug level 1).
+  2:         Exit debugger, returning to top level.
+
+(PARSE-S)
+   source: (ERROR
+            "Syntax error at position ~A: Expected 's' or 'd' but found ~A."
+            *POSITION* TOKEN)
+0[3] (parse '(i x o s s s s))
+
+
+debugger invoked on a SIMPLE-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Syntax error at position 3: Expected 'x', 'y', 'z', or 'w' but found S.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Reduce debugger level (to debug level 3).
+  1:         Reduce debugger level (to debug level 2).
+  2:         Reduce debugger level (to debug level 1).
+  3:         Exit debugger, returning to top level.
+
+(PARSE-G)
+   source: (ERROR
+            "Syntax error at position ~A: Expected 'x', 'y', 'z', or 'w' but found ~A."
+            *POSITION* TOKEN)
+0[4] ^Z
+[1]+  Stopped                 sbcl --load Q8.lisp
+[0;32m@prakriti2058 [1;31m➜ [1;34m/workspaces/csci-330-homeworks-prakriti2058/HWork5 [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+There are stopped jobs.
+[0;32m@prakriti2058 [1;31m➜ [1;34m/workspaces/csci-330-homeworks-prakriti2058/HWork5 [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+
+Script done on 2025-03-17 03:24:18+00:00 [COMMAND_EXIT_CODE="1"]
